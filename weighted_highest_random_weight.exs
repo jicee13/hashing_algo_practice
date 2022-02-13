@@ -28,7 +28,7 @@ defmodule WeightedHighestRandomWeightHash do
   end
 
   defp score(object, server, weight) do
-    -weight / :math.log(hash(object, server) / Bitwise.<<<(1, 32))
+    -weight / :math.log(hash(object, server) / Bitwise.<<<(1, 32) + 1)
   end
 
   defp hash(object, server) do
